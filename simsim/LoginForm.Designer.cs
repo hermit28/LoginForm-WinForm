@@ -87,7 +87,7 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.ForeColor = System.Drawing.Color.Transparent;
             this.btnClose.Location = new System.Drawing.Point(356, 3);
             this.btnClose.Name = "btnClose";
@@ -103,7 +103,7 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnLogin.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnLogin.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.btnLogin.Location = new System.Drawing.Point(143, 390);
             this.btnLogin.Name = "btnLogin";
@@ -121,7 +121,7 @@
             this.btnSignUp.FlatAppearance.MouseDownBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSignUp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.LightSkyBlue;
             this.btnSignUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSignUp.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSignUp.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSignUp.ForeColor = System.Drawing.Color.White;
             this.btnSignUp.Location = new System.Drawing.Point(267, 390);
             this.btnSignUp.Name = "btnSignUp";
@@ -134,20 +134,20 @@
             // txtUsername
             // 
             this.txtUsername.BackColor = System.Drawing.SystemColors.Window;
-            this.txtUsername.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtUsername.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtUsername.Location = new System.Drawing.Point(128, 326);
+            this.txtUsername.Location = new System.Drawing.Point(150, 326);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(256, 26);
+            this.txtUsername.Size = new System.Drawing.Size(234, 26);
             this.txtUsername.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("D2Coding", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPassword.ForeColor = System.Drawing.Color.DeepSkyBlue;
-            this.txtPassword.Location = new System.Drawing.Point(128, 358);
+            this.txtPassword.Location = new System.Drawing.Point(150, 358);
             this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(256, 26);
+            this.txtPassword.Size = new System.Drawing.Size(234, 26);
             this.txtPassword.TabIndex = 1;
             this.txtPassword.UseSystemPasswordChar = true;
             // 
@@ -155,11 +155,11 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.Color.Transparent;
-            this.lblUsername.Font = new System.Drawing.Font("D2Coding", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblUsername.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblUsername.Location = new System.Drawing.Point(12, 326);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(110, 24);
+            this.lblUsername.Size = new System.Drawing.Size(132, 25);
             this.lblUsername.TabIndex = 5;
             this.lblUsername.Text = "Username :";
             // 
@@ -167,11 +167,11 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.Color.Transparent;
-            this.lblPassword.Font = new System.Drawing.Font("D2Coding", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblPassword.ForeColor = System.Drawing.Color.DeepSkyBlue;
             this.lblPassword.Location = new System.Drawing.Point(12, 358);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(110, 24);
+            this.lblPassword.Size = new System.Drawing.Size(128, 25);
             this.lblPassword.TabIndex = 6;
             this.lblPassword.Text = "Password :";
             // 

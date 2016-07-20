@@ -58,7 +58,7 @@ namespace simsim
             }
         }
 
-        public void InsertRows()
+        public void InsertUserInfo(string username, string password, string phoneNumber, string birth, string gender)
         {
             C.SqlParameter parameter;
 
@@ -71,22 +71,36 @@ namespace simsim
         dbo.Users
             (Username,
             Password,
-            Gender,
-            PhoneNumber
+            PhoneNumber,
+            Birth,
+            Gender
             )
     VALUES 
         (@Username,
         @Password,
-        @Gender,
-        PhoneNumber
+        @PhoneNumber,
+        @Birth,
+        @Gender
         ); ";
 
                 parameter = new C.SqlParameter("@Username", D.SqlDbType.VarChar, 25);
-                parameter.Value = "t5";
+                parameter.Value = username;
                 command.Parameters.Add(parameter);
 
-                parameter = new C.SqlParameter("@Password", D.SqlDbType.VarChar, 25);
-                parameter.Value = "t5";
+                parameter = new C.SqlParameter("@Password", D.SqlDbType.VarChar, 20);
+                parameter.Value = password;
+                command.Parameters.Add(parameter);
+
+                parameter = new C.SqlParameter("@PhoneNumber", D.SqlDbType.VarChar, 20);
+                parameter.Value = phoneNumber;
+                command.Parameters.Add(parameter);
+
+                parameter = new C.SqlParameter("@Birth", D.SqlDbType.VarChar, 50);
+                parameter.Value = birth;
+                command.Parameters.Add(parameter);
+
+                parameter = new C.SqlParameter("@Gender", D.SqlDbType.VarChar, 10);
+                parameter.Value = gender;
                 command.Parameters.Add(parameter);
 
                 command.ExecuteScalar();

@@ -12,7 +12,8 @@ namespace simsim
 {
     public partial class LoginForm : Form
     {
-        DB db;
+        internal DB db;
+
         public LoginForm()
         {
             InitializeComponent();
