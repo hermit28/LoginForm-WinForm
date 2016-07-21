@@ -76,14 +76,93 @@ namespace simsim
                         gender = "";
                     }
 
-                    MessageBox.Show(gender);
-                    db.InsertUserInfo(txtUsername.Text, txtPassword.Text, txtPhoneNumber.Text, dtpBirth.Text, gender);
+                    //db.InsertUserInfo(txtUsername.Text, txtPassword.Text, txtPhoneNumber.Text, dtpBirth.Text, gender);
                     MessageBox.Show("Successfully sign up", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
                     MessageBox.Show("failed sign up", "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void txtPhoneNumber_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if(!(Char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '-'))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void SignUpForm_Load(object sender, EventArgs e)
+        {
+            int year = DateTime.Now.Year;
+
+            for (int i = 0; i < 120; i++)
+            {
+                cboYear.Items.Add(year--);
+            }
+
+            for(int i = 1; i <= 12; i++)
+            {
+                cboMonth.Items.Add(i);
+            }
+
+            for (int i = 1; i <= 31; i++)
+            {
+                cboDay.Items.Add(i);
+            }
+        }
+
+        private void cboMonth_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int selectYear = (int)cboYear.SelectedItem;
+            int selectMonth = (int)cboMonth.SelectedItem;
+            bool leapYear = false;
+
+            if ((selectYear % 4 == 0 && selectYear % 100 != 0) || selectYear % 400 == 0)
+            {
+                leapYear = true;
+            }
+
+            int day = 1;
+
+            switch (selectMonth)
+            {
+                case 1:
+                case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
+                    day = 31;
+                    break;
+
+                case 4:
+                case 6:
+                case 9:
+                case 11:
+                    day = 30;
+                    break;
+
+                case 2:
+                    if(leapYear)
+                    {
+                        day = 29;
+                    }
+                    else
+                    {
+                        day = 28;
+                    }
+                    break;
+            }
+
+            cboDay.Items.Clear();
+
+            for(int i = 1; i <= day; i++)
+            {
+                cboDay.Items.Add(i);
             }
         }
     }

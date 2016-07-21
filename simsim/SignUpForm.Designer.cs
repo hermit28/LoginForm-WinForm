@@ -45,7 +45,9 @@
             this.chkFemale = new System.Windows.Forms.CheckBox();
             this.chkOther = new System.Windows.Forms.CheckBox();
             this.lblBrith = new System.Windows.Forms.Label();
-            this.dtpBirth = new System.Windows.Forms.DateTimePicker();
+            this.cboYear = new System.Windows.Forms.ComboBox();
+            this.cboMonth = new System.Windows.Forms.ComboBox();
+            this.cboDay = new System.Windows.Forms.ComboBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -159,7 +161,7 @@
             this.btnConfirm.Location = new System.Drawing.Point(266, 434);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(118, 39);
-            this.btnConfirm.TabIndex = 7;
+            this.btnConfirm.TabIndex = 9;
             this.btnConfirm.Text = "&Confirm";
             this.btnConfirm.UseVisualStyleBackColor = true;
             this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
@@ -180,11 +182,12 @@
             // 
             this.txtPhoneNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.txtPhoneNumber.ForeColor = System.Drawing.Color.DeepSkyBlue;
+            this.txtPhoneNumber.ImeMode = System.Windows.Forms.ImeMode.Disable;
             this.txtPhoneNumber.Location = new System.Drawing.Point(199, 342);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(185, 26);
             this.txtPhoneNumber.TabIndex = 2;
-            this.txtPhoneNumber.Text = "010-0000-0000";
+            this.txtPhoneNumber.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPhoneNumber_KeyPress);
             // 
             // lblGender
             // 
@@ -206,7 +209,7 @@
             this.chkMale.Location = new System.Drawing.Point(121, 409);
             this.chkMale.Name = "chkMale";
             this.chkMale.Size = new System.Drawing.Size(61, 20);
-            this.chkMale.TabIndex = 4;
+            this.chkMale.TabIndex = 6;
             this.chkMale.Tag = "Gender";
             this.chkMale.Text = "Male";
             this.chkMale.UseVisualStyleBackColor = true;
@@ -220,7 +223,7 @@
             this.chkFemale.Location = new System.Drawing.Point(180, 409);
             this.chkFemale.Name = "chkFemale";
             this.chkFemale.Size = new System.Drawing.Size(79, 20);
-            this.chkFemale.TabIndex = 5;
+            this.chkFemale.TabIndex = 7;
             this.chkFemale.Tag = "Gender";
             this.chkFemale.Text = "Female";
             this.chkFemale.UseVisualStyleBackColor = true;
@@ -234,7 +237,7 @@
             this.chkOther.Location = new System.Drawing.Point(257, 409);
             this.chkOther.Name = "chkOther";
             this.chkOther.Size = new System.Drawing.Size(64, 20);
-            this.chkOther.TabIndex = 6;
+            this.chkOther.TabIndex = 8;
             this.chkOther.Tag = "Gender";
             this.chkOther.Text = "Other";
             this.chkOther.UseVisualStyleBackColor = true;
@@ -252,14 +255,34 @@
             this.lblBrith.TabIndex = 20;
             this.lblBrith.Text = "Birth :";
             // 
-            // dtpBirth
+            // cboYear
             // 
-            this.dtpBirth.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpBirth.Location = new System.Drawing.Point(93, 379);
-            this.dtpBirth.Name = "dtpBirth";
-            this.dtpBirth.Size = new System.Drawing.Size(200, 21);
-            this.dtpBirth.TabIndex = 3;
-            this.dtpBirth.Value = new System.DateTime(2016, 7, 20, 10, 23, 35, 0);
+            this.cboYear.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboYear.FormattingEnabled = true;
+            this.cboYear.ImeMode = System.Windows.Forms.ImeMode.Disable;
+            this.cboYear.Location = new System.Drawing.Point(93, 380);
+            this.cboYear.Name = "cboYear";
+            this.cboYear.Size = new System.Drawing.Size(66, 20);
+            this.cboYear.TabIndex = 3;
+            // 
+            // cboMonth
+            // 
+            this.cboMonth.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMonth.FormattingEnabled = true;
+            this.cboMonth.Location = new System.Drawing.Point(165, 380);
+            this.cboMonth.Name = "cboMonth";
+            this.cboMonth.Size = new System.Drawing.Size(66, 20);
+            this.cboMonth.TabIndex = 4;
+            this.cboMonth.SelectedIndexChanged += new System.EventHandler(this.cboMonth_SelectedIndexChanged);
+            // 
+            // cboDay
+            // 
+            this.cboDay.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDay.FormattingEnabled = true;
+            this.cboDay.Location = new System.Drawing.Point(237, 380);
+            this.cboDay.Name = "cboDay";
+            this.cboDay.Size = new System.Drawing.Size(66, 20);
+            this.cboDay.TabIndex = 5;
             // 
             // SignUpForm
             // 
@@ -267,7 +290,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(404, 485);
-            this.Controls.Add(this.dtpBirth);
+            this.Controls.Add(this.cboDay);
+            this.Controls.Add(this.cboMonth);
+            this.Controls.Add(this.cboYear);
             this.Controls.Add(this.lblBrith);
             this.Controls.Add(this.chkOther);
             this.Controls.Add(this.chkFemale);
@@ -284,6 +309,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SignUpForm";
             this.Text = "SignUpForm";
+            this.Load += new System.EventHandler(this.SignUpForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -310,6 +336,8 @@
         private System.Windows.Forms.CheckBox chkFemale;
         private System.Windows.Forms.CheckBox chkOther;
         private System.Windows.Forms.Label lblBrith;
-        private System.Windows.Forms.DateTimePicker dtpBirth;
+        private System.Windows.Forms.ComboBox cboYear;
+        private System.Windows.Forms.ComboBox cboMonth;
+        private System.Windows.Forms.ComboBox cboDay;
     }
 }
